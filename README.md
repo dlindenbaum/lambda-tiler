@@ -2,6 +2,16 @@
 
 #### AWS Lambda + rio-tiler to serve tiles from any web hosted files
 
+An online service is available for anyone to use with Cloud Optimized GeoTIFF's
+
+Sample Bounds Request:
+
+https://bstlgagxwg.execute-api.us-east-1.amazonaws.com/production/bounds?url=http://oin-hotosm.s3.amazonaws.com/593ee29de407d7001138613d/0/d42dec6e-3682-4d49-8d01-5755483671eb.tif
+
+Sample Tile Request:
+
+https://bstlgagxwg.execute-api.us-east-1.amazonaws.com/production/tiles/21/1087689/1046434.png?url=http://oin-hotosm.s3.amazonaws.com/593ee29de407d7001138613d/0/d42dec6e-3682-4d49-8d01-5755483671eb.tif
+
 # Info
 
 
