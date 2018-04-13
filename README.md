@@ -64,9 +64,12 @@ $ curl {you-endpoint}/bounds?url=https://any-file.on/the-internet.tif
 *Options:*
 - rgb: select bands indexes to return (e.g: (1,2,3), (4,1,2))
 - nodata: nodata value to create mask
-
+- linearStretch: boolean field. This field will linearly stretch the tile for resizing to (1,255) 
 *example:*
 ```
 $ curl {you-endpoint}/tiles/7/10/10.png?url=https://any-file.on/the-internet.tif
 
 ```
+
+## added refresh capability
+"https://spacenet-dataset.s3.amazonaws.com/AOI_2_Vegas/srcData/rasterData/RGB-PanSharpen_Cloud/15OCT22183656-S2AS_R7C7-056155973040_01_P001.TIF?AWSAccessKeyId%3DAKIAIUDPR4WNGRTMOUFQ%26Signature%3DpQKsqY4K09bVytqH3nyFgUkZf9w%253D%26Expires%3D1524505774"
