@@ -85,7 +85,10 @@ def NDtile(tile_z, tile_x, tile_y, tileformat):
 
     # get Band indexes
     band1 = query_args.get('band1')
+    band1 = int(band1) if isinstance(band1, str) else band1
     band2 = query_args.get('band2')
+    band2 = int(band2) if isinstance(band2, str) else band2
+
     if band1 & band2:
         bands = (band1, band2)
     else:
@@ -105,11 +108,11 @@ def NDtile(tile_z, tile_x, tile_y, tileformat):
 
     tile, mask = main.tile(address, tile_x, tile_y, tile_z, bands, tilesize=tilesize, nodata=nodata, alpha=alpha)
 
-    bandTile1 = tile[:,:,0]
-    bandTile2 = tile[:, :, 1]
+    bandTile1 = tile[0]
+    bandTile2 = tile[1]
 
     np.seterr(divide='ignore', invalid='ignore')
-    tile = (band2.astype(float) - band1.astype(float)) / (band2.astype(float) + band1.astype(float))
+    tile = (bandTile2.astype(float) - bandTile1.astype(float)) / (bandTile2.astype(float) + bandTile1.astype(float))
 
     # detect linear scale request
     linearStretch = query_args.get('linearStretch')
