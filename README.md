@@ -70,3 +70,26 @@ $ curl {you-endpoint}/bounds?url=https://any-file.on/the-internet.tif
 $ curl {you-endpoint}/tiles/7/10/10.png?url=https://any-file.on/the-internet.tif
 
 ```
+
+#### /NDtiles/z/x/y.png
+Calculated normalized diffference index between two bands.
+The most common example is NDVI
+
+tile = (Band2 - Band1)/(Band2 _ Band 1)
+
+
+*Inputs:*
+- url: any valid url
+- band1: first band index e.g. 3
+- band2: second band index e.g. 4
+
+
+*Options:*
+- rgb: select bands indexes to return (e.g: (1,2,3), (4,1,2))
+- nodata: nodata value to create mask
+- linearStretch: boolean field. This field will linearly stretch the tile for resizing to (1,255) 
+*example:*
+```
+$ curl {you-endpoint}/NDtiles/7/10/10.png?url=https://any-file.on/the-internet.tif&band1=3&band2=4&lindearStretch=True
+
+```
