@@ -86,7 +86,7 @@ def NDtile(tile_z, tile_x, tile_y, tileformat):
     # get Band indexes
     band1 = query_args.get('band1')
     band2 = query_args.get('band2')
-    if band1 && band2:
+    if band1 & band2:
         bands = (band1, band2)
     else:
         raise ("Error No Bnads specified")
